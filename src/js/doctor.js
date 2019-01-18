@@ -11,8 +11,8 @@ export class Doctor {
             if (this.status === 200) {
               resolve(request.response);
             } else {
-              alert(request.statusText);
               reject(Error(request.statusText));
+              $("#textLog").prepend(`<p>There was an error processing the request: ${error.message}</p>`);
             }
           }
           request.open("GET", url, true);
