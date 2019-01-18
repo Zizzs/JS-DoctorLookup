@@ -1,0 +1,14 @@
+#mainGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#textLog {
+    width: 400px;
+    height: 500px;
+}
+
+#formInput {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}

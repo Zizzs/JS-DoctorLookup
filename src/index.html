@@ -10,6 +10,27 @@
     </head>
 
     <body>
-        
+        <div id="mainGrid">
+            <div id="formInput">
+                <div>
+                    <form id="doctorList">
+                        <label for="allDoctors">Search for a doctor by specialty!</label>
+                        <select id="doctorSpecialty">
+                        </select>
+                        <button type="submit" class="button">Submit</button>
+                    </form>
+                </div>
+                <div>
+                    <form id="searchByDoctor">
+                        <label for="doctorName">Search for a doctor by name!</label>
+                        <input id="doctorName" type="text" required></input><br>
+                        <button type="submit" class="button">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="log">
+                <textarea id="textLog"></textarea>
+            </div>
+        </div>
     </body>
 </html>
