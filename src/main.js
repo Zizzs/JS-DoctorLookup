@@ -8,7 +8,7 @@ import { Doctor } from './js/doctor'
 
 // ---------------------------------------------------------------------------------------------
     //Had to comment on this because it blew my mind. Instead of doing an API call on every single submit request, I realized you could put the promise before document.ready, and it will do ONE API request, and then I can use that information throughout the entire website. It's also WAY faster!
-    // ----------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
 let doctor = new Doctor();
 const selectForm = $("#doctorSpecialty");
 let promise = doctor.getAllDoctors();
