@@ -6,9 +6,12 @@ import { Doctor } from './js/doctor'
 
 
 
-const selectForm = $("#doctorSpecialty");
+// ---------------------------------------------------------------------------------------------
+    //Had to comment on this because it blew my mind. Instead of doing an API call on every single submit request, I realized you could put the promise before document.ready, and it will do ONE API request, and then I can use that information throughout the entire website. It's also WAY faster!
+    // ----------------------------------------------------------------------------------------------
 let doctor = new Doctor();
-let promise = doctor.getAllDoctors(name);
+const selectForm = $("#doctorSpecialty");
+let promise = doctor.getAllDoctors();
 promise.then(function(response) {
     let data = JSON.parse(response);
     let specialtyArray = doctor.searchDoctorsForAllSpecialties(data);
@@ -21,10 +24,6 @@ promise.then(function(response) {
 let recentDoctorsArray = [];
 
 $(document).ready(function () {
-    // ---------------------------------------------------------------------------------------------
-    //Had to comment on this because it blew my mind. Instead of doing an API call on every single submit request, I realized you could put the promise after document.ready, and it will do ONE API request, and then I can use that information throughout the entire website. It's also WAY faster!
-    let promise = doctor.getAllDoctors(name);
-    // ----------------------------------------------------------------------------------------------
     
     // Allows the user to choose from the specialties found within the API to search for doctors with that specialty.
     $("#doctorList").submit(function(event) {
@@ -50,7 +49,6 @@ $(document).ready(function () {
         promise.then(function(response) {
             let data = JSON.parse(response);
             let doctorArray = doctor.searchDoctorsByName(data, doctorName);
-            console.log(doctorArray);
             for (let doctorObj of doctorArray) {
                 recentDoctorsArray.push(doctorObj);
                 doctor.outputDoctorText(doctorObj);
@@ -60,6 +58,7 @@ $(document).ready(function () {
         })
     });
 
+    // Allows the user to see recent doctor searches
     $("#showRecentDoctors").submit(function(event) {
         event.preventDefault();
         for(let doctorObj of recentDoctorsArray) {
