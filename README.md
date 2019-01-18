@@ -19,6 +19,7 @@ _This web application allows you to use the BetterDoctor API to search for docto
 * _Clone from Github_
 * _Navigate to root project directory in the terminal._
 * _Input npm install into the terminal to install dependancies._
+* _Create your own .env file in the root folder and initialize a new API Key variable with "exports.apiKey = KEYGOESHERE"._
 * _Input npm run build to build the application._
 * _Input npm run start to start the application._
 
