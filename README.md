@@ -6,12 +6,13 @@
 
 ## Description
 
-_This web application allows you to use the BetterDoctor API to search for doctors in the given location. It will let the user search by name or by specialty and then see a list of doctors and their information._
+_This web application allows you to use the BetterDoctor API to search for doctors in the Portland area. It will let the user search by name or by specialty and then see a list of doctors and their information._
 
 ## Specs
-    1. The website does an API call to retrieve the JSON object data from the server for the given location(Default: Portland)
+    1. The website does an API call to retrieve the JSON object data from the server for the Portland area.
     2. The user can then pick from the list of specialities and retrieve doctor information for all doctors that specialize in that specific speciality.
     3. The user can also type in a name, and see all doctors and their information with the given name.
+    4. The user can view recent search results by pressing the recent results button. Keeps all results that have been searched.
 
 ## Setup/Installation Requirements
 

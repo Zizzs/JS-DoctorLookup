@@ -5,32 +5,51 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="https://fonts.googleapis.com/css?family=Anton|Oswald" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Alegreya|Aleo" rel="stylesheet">
         <title>Document</title>
     </head>
 
     <body>
+        <div id="jumbo" class="jumbotron jumbotron-fluid">
+            <div id="jumboHeader" class="container">
+                <h1 id="jumboMainText" class="display-4">Doctor Lookup</h1>
+                <p id="jumboSmallText" class="lead">Search for doctors using the BetterDoctor API</p>
+            </div>
+        </div>
         <div id="mainGrid">
             <div id="formInput">
-                <div>
+                <div class="formDivs">
                     <form id="doctorList">
-                        <label for="allDoctors">Search for a doctor by specialty!</label>
+                        <label class="formLabel" for="allDoctors">Search for a doctor by specialty</label>
                         <select id="doctorSpecialty">
-                        </select>
+                        </select><br>
                         <button type="submit" class="button">Submit</button>
                     </form>
                 </div>
-                <div>
+                <div class="formDivs">
                     <form id="searchByDoctor">
-                        <label for="doctorName">Search for a doctor by name!</label>
+                        <label class="formLabel" for="doctorName">Search for a doctor by name</label><br>
                         <input id="doctorName" type="text" required></input><br>
                         <button type="submit" class="button">Submit</button>
                     </form>
                 </div>
+                <div>
+                    <form id="showRecentDoctors">
+                        <label class="formLabel" for="showRecentDoctors">Show recent doctor results</label><br>
+                        <button type="submit" class="button">Submit</button>
+                    </form>
+                </div>
+                <div>
+                    <img id="mainImage" src="https://www.nia.nih.gov/sites/default/files/styles/inline_25/public/inline-images/memory-and-thinking-whats-normal-inline.jpg?itok=PwlnNDDS">
+                </div>
             </div>
             <div class="log">
-                <textarea id="textLog"></textarea>
+                <div id="textLog"></div>
             </div>
+        </div>
+        <div class="footer">
+            <p id="footerTextLeft">Doctor Lookup</a></p>
+            <p id="footerTextRight">Alex Williams - <a href="https://github.com/Zizzs">Github Profile</a></p>
         </div>
     </body>
 </html>
