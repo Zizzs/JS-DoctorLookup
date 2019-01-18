@@ -1,6 +1,8 @@
 import $ from 'jquery';
 
 export class Doctor {
+
+    // The main API Query, using a .env file to block it from being posted to github.
     getAllDoctors() {
         return new Promise(function(resolve, reject) {
           let request = new XMLHttpRequest();
@@ -17,6 +19,8 @@ export class Doctor {
           request.send();
         });
     }
+
+    // The logic that populates the select/option drop down of all specialties that doctors have.
     searchDoctorsForAllSpecialties(data) {
         let specialtyArray = [];
         for(let i=0; i < data.data.length; i++) {
@@ -26,6 +30,8 @@ export class Doctor {
         }
         return specialtyArray;
     }
+
+    // The logic behind searching doctors by specialty.
     searchDoctorJSONForSpecialty(data, specialty) {
         let array = [];
         for(let i=0; i < data.data.length; i++) {
@@ -40,6 +46,7 @@ export class Doctor {
         return array;
     }
 
+    // The logic behind searching doctors by name.
     searchDoctorsByName(data, name) {
         let array = [];
         for(let i=0; i < data.data.length; i++) {
@@ -53,6 +60,7 @@ export class Doctor {
         return array;
     }
 
+    // The main output block of code to clean up main.js. Outputs all doctor information into the text area.
     outputDoctorText(doctor) {
         $("#textLog").prepend(`Acepting new patients: ${doctor.practices[0].accepts_new_patients} \n`);
         $("#textLog").prepend(`Phone Number:
